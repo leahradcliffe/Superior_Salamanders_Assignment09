@@ -1,42 +1,39 @@
-#main.py
 
-from package1.module1 import get_product_data, connect_to_server
+# File Name : main.py
+# Student Name: Uruz B, Leah R, Justin G
+# email:  bidiwaur@mail.uc.edu
+# Assignment Number: Assignment 09
+# Due Date: April 2, 2025
+# Course #/Section: IS 4010-001
+# Semester/Year: Spring 2025
+# Brief Description of the assignment: Group project connecting to SQL database
+
+# Brief Description of what this module does. {Do not copy/paste from a previous assignment. Put some thought into this. required}
+# Citations: {"Stack Overflow" is not sufficient. Provide repeatable links, book page #, etc.}
+
+# Anything else that's relevant:
+
+from package1.module1 import get_product_data
 from package2.module2 import get_manufacturer_name, get_brand_name
 import random
 
+def main():
+    products = get_product_data()
+    if not products:
+        return
+
+    product = random.choice(products)
+
+    description = product['Description']
+    product_id = product['ProductID']
+    manufacturer_id = product['ManufacturerID']
+    brand_id = product['BrandID']
+
+    manufacturer = get_manufacturer_name(manufacturer_id)
+    brand = get_brand_name(brand_id)
+
+    print(f"The product {description} (ProductID: {product_id}) is manufactured by {manufacturer} "
+          f"(ManufacturerID: {manufacturer_id}) under the brand {brand} (BrandID: {brand_id}).")
+
 if __name__ == "__main__":
-    
-
-    def get_items_sold(product_id):
-        conn = connect_to_server()
-        cursor = conn.cursor()
-        query = """
-            SELECT SUM(dbo.tTransactionDetail.QtyOfProduct)
-            FROM dbo.tTransactionDetail
-            INNER JOIN dbo.tTransaction
-            ON dbo.tTransactionDetail.TransactionID = dbo.tTransaction.TransactionID
-            WHERE dbo.tTransaction.TransactionTypeID = 1
-            AND dbo.tTransactionDetail.ProductID = ?
-        """
-        cursor.execute(query, (product_id,))
-        result = cursor.fetchone()
-        cursor.close()
-        conn.close()
-        return result[0] if result and result[0] is not None else 0
-
-    def main():
-        products = get_product_data()
-        if not products:
-            print("No products found.")
-            return
-
-        product = random.choice(products)
-        description = product['Description']
-        product_id = product['ProductID']
-        manufacturer = get_manufacturer_name(product['ManufacturerID'])
-        brand = get_brand_name(product['BrandID'])
-        items_sold = get_items_sold(product_id)
-
-        print(f"The product '{description}' by {manufacturer} under the brand {brand} has sold {items_sold} items.")
-
-
+    main()
