@@ -1,6 +1,18 @@
-#Assignment 09
-# module1.py
+# File Name : module1.py
+# Student Name: Uruz B, Leah R, Justin G
+# email:  bidiwaur@mail.uc.edu
+# Assignment Number: Assignment 09
+# Due Date: April 2, 2025
+# Course #/Section: IS 4010-001
+# Semester/Year: Spring 2025
+# Brief Description of the assignment: Group project connecting to SQL database
 
+# Brief Description of what this module does. {Do not copy/paste from a previous assignment. Put some thought into this. required}
+# Citations: {"Stack Overflow" is not sufficient. Provide repeatable links, book page #, etc.}
+
+# Anything else that's relevant:
+
+ 
 import pyodbc
 import random
 
@@ -27,7 +39,7 @@ def get_product_data():
     cursor.execute(query)
     results = cursor.fetchall()
 
-    # 1. Submit this query and store the results in a data structure
+    # Convert to a list of dictionaries for easier access
     products = []
     for row in results:
         products.append({
@@ -43,8 +55,6 @@ def get_product_data():
 
     return products
 
-# 2. Randomly select one row from the data structure in step 1. Store the Description in a variable.
-# Store the ProductID in a variable. Store the ManufacturerID and BrandID in variables.
 def select_random_product(products):
     """Randomly select one product and return relevant information."""
     selected_product = random.choice(products)
@@ -55,4 +65,4 @@ def select_random_product(products):
     brand_id = selected_product['BrandID']
 
     return product_id, description, manufacturer_id, brand_id
-
+    
