@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Superior_Salamanders_Assignment09", "Superior_Salamanders_Assignment09\Superior_Salamanders_Assignment09.pyproj", "{DF197734-A9FE-4DCF-A2E5-0EAD4CCD627F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF197734-A9FE-4DCF-A2E5-0EAD4CCD627F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF197734-A9FE-4DCF-A2E5-0EAD4CCD627F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8E6E72B6-4082-4137-AD3E-5AA08F56DD34}
+	EndGlobalSection
+EndGlobal
