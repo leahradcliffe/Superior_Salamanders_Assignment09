@@ -1,6 +1,6 @@
 #Assignment 09
 # module1.py
-#vsjhlbdv 
+
 import pyodbc
 import random
 
@@ -9,7 +9,7 @@ def connect_to_server():
     conn = pyodbc.connect(
         'Driver={SQL Server};'
         'Server=lcb-sql.uccob.uc.edu\\nicholdw;'
-        'Database=IS4010;'
+        'Database=GroceryStoreSimulator;'
         'uid=IS4010Login;'
         'pwd=P@ssword2;'
     )
@@ -27,7 +27,7 @@ def get_product_data():
     cursor.execute(query)
     results = cursor.fetchall()
 
-    # Convert to a list of dictionaries for easier access
+    # 1. Submit this query and store the results in a data structure
     products = []
     for row in results:
         products.append({
@@ -43,6 +43,8 @@ def get_product_data():
 
     return products
 
+# 2. Randomly select one row from the data structure in step 1. Store the Description in a variable.
+# Store the ProductID in a variable. Store the ManufacturerID and BrandID in variables.
 def select_random_product(products):
     """Randomly select one product and return relevant information."""
     selected_product = random.choice(products)
