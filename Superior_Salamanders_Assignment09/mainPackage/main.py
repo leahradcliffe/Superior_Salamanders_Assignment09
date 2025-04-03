@@ -15,6 +15,8 @@
 
 from package1.module1 import get_product_data
 from package2.module2 import get_manufacturer_name, get_brand_name
+from package3.module3 import print_product_sales_statement
+
 import random
 
 def main():
@@ -34,6 +36,8 @@ def main():
 
     print(f"The product {description} (ProductID: {product_id}) is manufactured by {manufacturer} "
           f"(ManufacturerID: {manufacturer_id}) under the brand {brand} (BrandID: {brand_id}).")
+
+    print_product_sales_statement(product_id, description, manufacturer, brand)
 
 if __name__ == "__main__":
     main()
